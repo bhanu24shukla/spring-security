@@ -13,17 +13,17 @@ import com.coderscampus.service.AdminService;
 
 @Controller
 public class DashboardController {
-  
-  @Autowired
-  private AdminService adminService;
-  
-  @GetMapping("/dashboard")
-  public String getDashboard (@AuthenticationPrincipal User user, ModelMap model) {
-    System.out.println(user);
-    
-    model.put("user", user);
-    List<User> allUserAccounts = adminService.getAllUserAccounts();
-    
-    return "dashboard";
-  }
+
+	@Autowired
+	private AdminService adminService;
+
+	@GetMapping("/dashboard")
+	public String getDashboard(@AuthenticationPrincipal User user, ModelMap model) {
+		System.out.println(user);
+
+		model.put("user", user);
+		List<User> allUserAccounts = adminService.getAllUserAccounts();
+
+		return "dashboard";
+	}
 }

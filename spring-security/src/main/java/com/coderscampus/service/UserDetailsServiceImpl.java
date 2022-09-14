@@ -12,19 +12,19 @@ import com.coderscampus.security.CustomSecurityUser;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-  
-  @Autowired
-  private UserRepository userRepo;
-  
-  @Override
-  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    
-    User user = userRepo.findByUsername(username);
-    
-    if (user == null)
-      throw new UsernameNotFoundException("Username and or password was incorrect.");
-    
-    return new CustomSecurityUser(user);
-  }
-  
+
+	@Autowired
+	private UserRepository userRepo;
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+		User user = userRepo.findByUsername(username);
+
+		if (user == null)
+			throw new UsernameNotFoundException("Username and or password was incorrect.");
+
+		return new CustomSecurityUser(user);
+	}
+
 }

@@ -12,11 +12,11 @@ import com.coderscampus.repositories.UserRepository;
 @Service
 public class AdminService {
 
-  @Autowired
-  private UserRepository userRepo;
-  
-  @Secured({"ROLE_ADMIN","ROLE_SUPERUSER"})
-  public List<User> getAllUserAccounts () {
-    return userRepo.findAll();
-  }
+	@Autowired
+	private UserRepository userRepo;
+
+	@Secured({ "ROLE_ADMIN", "ROLE_SUPERUSER" })
+	public List<User> getAllUserAccounts() {
+		return userRepo.findAll();
+	}
 }

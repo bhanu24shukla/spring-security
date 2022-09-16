@@ -23,6 +23,8 @@ public class DashboardController {
 
 		model.put("user", user);
 		List<User> allUserAccounts = adminService.getAllUserAccounts();
+		System.out.println("***************** ALL USER ACCOUNTS *****************");
+		System.out.println(allUserAccounts);
 
 		return "dashboard";
 	}
